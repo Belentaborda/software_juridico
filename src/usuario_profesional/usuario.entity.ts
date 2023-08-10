@@ -1,8 +1,9 @@
-import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
+import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
+import { Casos } from 'src/casos/casos.entity';
+import { Usuarios_Clientes } from 'src/usuario_cliente/usuario_cliente.entity';
 
-
-@Entity('usuarios')
-export class usuarios{
+@Entity('usuario_profesional')
+export class Usuario{
 @PrimaryGeneratedColumn() 
 id: number;
 @Column({type: 'varchar', length: 255, })
@@ -21,6 +22,7 @@ matricula: string
 jurisdiccion: string
 @Column({type: 'varchar', length: 255})
 CUIT: number
-
+@OneToMany(()=> Casos, casos => casos.usuario)
+casos: Casos[];
 
 }
