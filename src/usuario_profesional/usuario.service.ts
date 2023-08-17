@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Usuario } from './usuario.entity';
+import {Profesional } from './usuario.entity';
 import { Repository } from 'typeorm';
 import { Casos } from 'src/casos/casos.entity';
 import { crearUsuarioProfesionalDto } from './Dto/crear-usuario-profesional.dto';
@@ -8,8 +8,8 @@ import { crearUsuarioProfesionalDto } from './Dto/crear-usuario-profesional.dto'
 @Injectable()
 export class UsuarioService {
   constructor(
-    @InjectRepository(Usuario)
-    private readonly usuarioRepository: Repository<Usuario>,
+    @InjectRepository(Profesional)
+    private readonly usuarioRepository: Repository<Profesional>,
 
     @InjectRepository(Casos) private readonly casosRepository: Repository<Casos>,
   ) {}

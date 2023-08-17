@@ -19,6 +19,6 @@ export class Casos{
     numeroCaso: number;
     @ManyToOne(()=> Usuario, usuario => usuario.casos)
     usuario: Usuario;
-    @ManyToMany(()=> Usuarios_Clientes, usuariosClientes => usuariosClientes.casos)
-    usuariosClientes: Usuarios_Clientes;
+    @ManyToOne(()=> Usuarios_Clientes, usuarioCliente => usuarioCliente.casos)
+    usuarioCliente: Usuarios_Clientes;
 }

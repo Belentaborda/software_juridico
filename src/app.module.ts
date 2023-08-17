@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UsuarioModule } from './usuario_profesional/usuario.module';
+import { ProfesionaloModule } from './usuario_profesional/usuario.module';
 import { CasosModule } from './casos/casos.module';
 import { UsuarioClienteModule } from './usuario_cliente/usuario_cliente.module';
+import { Profesional } from './usuario_profesional/usuario.entity';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 
 @Module({
@@ -17,7 +19,7 @@ import { UsuarioClienteModule } from './usuario_cliente/usuario_cliente.module';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),   
-    UsuarioModule, CasosModule, UsuarioClienteModule],
+    UsuariosModule, ProfesionaloModule, CasosModule, UsuarioClienteModule],
   controllers: [],
   providers: [],
 })
