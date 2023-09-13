@@ -1,6 +1,8 @@
 import { Usuarios_Clientes } from 'src/usuario_cliente/usuario_cliente.entity';
-import { Usuario } from 'src/usuario_profesional/usuario.entity';
+import { Profesional } from 'src/usuario_profesional/usuario.entity' 
 import {Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn} from 'typeorm';
+
+
 
 
 @Entity('casos')
@@ -17,8 +19,8 @@ export class Casos{
     email: string
     @Column({type: 'varchar', length: 255})
     numeroCaso: number;
-    @ManyToOne(()=> Usuario, usuario => usuario.casos)
-    usuario: Usuario;
+    @ManyToOne(()=> Profesional, usuario => usuario.casos)
+    usuario: Profesional;
     @ManyToOne(()=> Usuarios_Clientes, usuarioCliente => usuarioCliente.casos)
     usuarioCliente: Usuarios_Clientes;
 }
